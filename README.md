@@ -27,12 +27,10 @@ Directory with code for data processing
 ### data
 
 Original dataframes with cycles and tracking data
-- ./data/cycles.pickle
-
+- ./data/cycles.pickle  
     Original cycle information (as pandas dataframe)
 
-- ./data/tracking.pickle
-
+- ./data/tracking.pickle  
     Original symptom tracking information (as pandas dataframe)
 
 ### preprocessed_data
@@ -58,11 +56,11 @@ Directory for plots and results
 - ./results/characterizing_cycle_and_symptoms
     Results regarding the initial exploratory analysis to characterize the menstrual cycle and self-tracked symptoms
     
-    -./results/characterizing_cycle_and_symptoms/cohort_summary_statistics  
+- ./results/characterizing_cycle_and_symptoms/cohort_summary_statistics  
         Summary statistics and plots for the npjDigitalMedicine cohort
 
-    -./results/characterizing_cycle_and_symptoms/cycle_period_length_analysis  
+- ./results/characterizing_cycle_and_symptoms/cycle_period_length_analysis  
         Summary statistics and plots regarding the npjDigitalMedicine cohort's self-reported cycles
 
-    -./results/characterizing_cycle_and_symptoms/symptom_tracking_analysis_bootstrapping_{nbootstrapped}  
+- ./results/characterizing_cycle_and_symptoms/symptom_tracking_analysis_bootstrapping_{nbootstrapped}  
         Results for a bootstrapped analysis (with nbootstrapped samples) of the npjDigitalMedicine cohort's self-tracked symptoms 
