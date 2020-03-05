@@ -39,20 +39,16 @@ Original dataframes with cycles and tracking data
 
 Pre-processed dataframes with cycles and tracking data
 
-- ./preprocessed_data/cohort_cycle_stats.pickle
-
+- ./preprocessed_data/cohort_cycle_stats.pickle  
     Cycle statistics of the original cohort
 
-- ./preprocessed_data/cohort_cycles_flagged.pickle
-
+- ./preprocessed_data/cohort_cycles_flagged.pickle  
     Cycle information, with flagged cycle indicator, of the original cohort
 
-- ./preprocessed_data/cohort_clean_cycle_stats.pickle
-
+- ./preprocessed_data/cohort_clean_cycle_stats.pickle  
     Cycle statistics of the clean cohort, after removing flagged cycles
 
-- ./preprocessed_data/cohort_clean_symptom_tracking_stats_{category}.pickle
-
+- ./preprocessed_data/cohort_clean_symptom_tracking_stats_{category}.pickle  
     Symptom tracking statistics for the clean cohort, where {category} matches each of the corresponding tracked categories
 
 ### results
@@ -62,11 +58,11 @@ Directory for plots and results
 - ./results/characterizing_cycle_and_symptoms
     Results regarding the initial exploratory analysis to characterize the menstrual cycle and self-tracked symptoms
     
-    -./results/characterizing_cycle_and_symptoms/cohort_summary_statistics
+    -./results/characterizing_cycle_and_symptoms/cohort_summary_statistics  
         Summary statistics and plots for the npjDigitalMedicine cohort
 
-    -./results/characterizing_cycle_and_symptoms/cycle_period_length_analysis
+    -./results/characterizing_cycle_and_symptoms/cycle_period_length_analysis  
         Summary statistics and plots regarding the npjDigitalMedicine cohort's self-reported cycles
 
-    -./results/characterizing_cycle_and_symptoms/symptom_tracking_analysis_bootstrapping_{nbootstrapped}
+    -./results/characterizing_cycle_and_symptoms/symptom_tracking_analysis_bootstrapping_{nbootstrapped}  
         Results for a bootstrapped analysis (with nbootstrapped samples) of the npjDigitalMedicine cohort's self-tracked symptoms 
