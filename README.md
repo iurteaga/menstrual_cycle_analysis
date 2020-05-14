@@ -6,7 +6,7 @@ Work on the characterization and analysis of menstrual cycles using self-tracked
 
 ### doc
 
-- doc/npjDigitalMedicine: manuscript as published in npj Digital Medicine
+- doc/characterization: manuscripts on "Characterizing physiological and symptomatic variation in menstrual cycles using self-tracked mobile-health data"
 
 ### src
 
