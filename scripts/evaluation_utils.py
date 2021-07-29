@@ -16,6 +16,9 @@ import pandas as pd
 import scipy.stats as stats
 import sklearn
 
+# Torch optim utilities
+import torch.optim as optim
+
 # Import Hierarchical latent var model
 # Add path
 sys.path.append('../src/prediction')
