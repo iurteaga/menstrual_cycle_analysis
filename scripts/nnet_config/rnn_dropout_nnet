@@ -1,0 +1,28 @@
+# Neural network model
+[nn_model]
+nn_model_name=rnn_nnet
+
+# Neural network model parameters
+[nn_model_params]
+rnn_type=RNN
+hidden_size=3
+n_layers=1
+nonlinearity=Tanh
+dropout=0.9
+bidirectional=True
+
+# Neural network training criterion
+[nn_training_criterion]
+criterion=MSELoss
+
+# Neural network training params
+[nn_training_params]
+n_epochs=1000
+batch_size=100
+loss_epsilon=0.0001
+grad_norm_max=0
+
+# Optimizer details
+[nn_optimizer]
+optimizer=Adam
+learning_rate=0.01

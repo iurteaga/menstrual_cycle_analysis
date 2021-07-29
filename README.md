@@ -2,27 +2,33 @@
 
 Work on the characterization and analysis of menstrual cycles using self-tracked mobile health data
 
-## Directories
+## Present directories
 
 ### doc
 
 - doc/characterization: manuscripts on "Characterizing physiological and symptomatic variation in menstrual cycles using self-tracked mobile-health data"
+    - [Characterizing physiological and symptomatic variation in menstrual cycles using self-tracked mobile health data. Li, K.; Urteaga, I.; Shea, A.; Vitzthum, V.; Wiggins, C. H; and Elhadad, N. Nature Partner Journal Digital Medicine, 3(79), 2020.](https://www.nature.com/articles/s41746-020-0269-8)
+
+- doc/prediction: manuscripts on predictive models:
+    - [A generative, predictive model for menstrual cycle lengths that accounts for potential self-tracking artifacts in mobile health data. Li, K.; Urteaga, I.; Shea, A.; Vitzthum, V.; Wiggins, C. H; and Elhadad, N. In NeurIPS 2020 Workshop "Machine Learning for Mobile Health",2020. Contributed Talk.] (https://sites.google.com/view/ml4mobilehealth-neurips-2020/home#h.kx5rlc27ssyh)
+    - [A generative, predictive model for menstrual cycle lengths that accounts for potential self-tracking artifacts in mobile health data. Li, K.; Urteaga, I.; Shea, A.; Vitzthum, V. J.; Wiggins, C. H.; and Elhadad, N. arXiv e-print:2102.12439.](https://arxiv.org/abs/2102.12439)
+    - [A Generative Modeling Approach to Calibrated Predictions:A Use Case on Menstrual Cycle Length Prediction. Urteaga, I.; Li, K.; Wiggins, C.; and Elhadad, N. In Proceedings of the 6th Machine Learning for Healthcare, 2021.](https://www.mlforhc.org/accepted-papers-1)
 
 ### src
 
-Directory with code for data processing
+Main directory with source code utilities.
 
-- compute_cohort_cycles_flagged.py
+- src/characterization
+    Directory with code for data processing
 
-- compute_cohort_clean_cycle_stats.py
+- src/prediction
+    Directory with code for predictive modeling and evaluation.
 
-- compute_cohort_clean_symptom_tracking_stats.py
+### scripts
 
-- cohort_summary_statistics.py
+Main directory with scripts to run, evaluate and plot experiments.
 
-- cycle_period_length_analysis.py
-
-- symptom_tracking_analysis_bootstrapping.py
+## Expected directory structure and content
 
 ### data
 

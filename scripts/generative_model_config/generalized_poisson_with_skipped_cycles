@@ -1,0 +1,39 @@
+# Generative model
+[generative_model]
+model_name=hierarchical_generalized_poisson_with_skipped_cycles_model
+
+# Generative model parameters
+[model_params]
+kappa=30
+gamma=1
+alpha_xi=1
+beta_xi=1
+alpha_pi=2
+beta_pi=20
+x_max=inf
+xi_max=1
+s_max=10
+
+# Model fitting criterion
+[model_fitting_criterion]
+criterion=nll_mc_per_individual
+M=500
+MC_samples=per_cohort
+
+# Model fitting parameters
+[model_fitting_params]
+n_epochs=1000
+batch_size=100
+loss_epsilon=0.0001
+grad_norm_max=0
+
+# Optimizer details
+[model_optimizer]
+optimizer=Adam
+learning_rate=0.01
+
+# Model prediction criterion
+[model_prediction_criterion]
+M=500
+MC_samples=per_cohort
+s_predict=10

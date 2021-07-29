@@ -1,0 +1,46 @@
+# Execution modes as sections
+# Leave empty if not interested
+
+# Fitting
+[fit]
+# Number of tries to fit
+n_fit_tries=5
+# Save fitted model
+save_fitted_model=True
+# Whether to evaluate fitting procedure
+#fit_eval_metrics=all
+# Whether to plot
+plot_fit_eval=False
+
+# Inference
+[inference]
+inference_eval_metrics=data
+# Type of parameter inference to compute
+parameter_posterior=mean,pmf
+
+# Inference plots
+plot_hyperparameters=False
+plot_parameters=False
+plot_data_statistics=True
+
+# Prediction
+[prediction]
+# Point estimate evaluation
+prediction_eval_metrics=mean_squared_error,median_squared_error,mean_absolute_error,median_absolute_error
+# Calibration evaluation
+prediction_eval_calibration=loglikelihood,loglikelihood_cumulative,brier_score,spherical_score,crps,interval_width_alpha80,interval_width_alpha50,interval_width_alpha20,mean_r2,mode_r2,pit_plot,mcp_plot
+# Do not specify day_range if not interested in prediction by day
+# Final day of range
+day_range=60
+# Specific days
+#day_range=1,15,30
+# Whether to include predict_s_0 for skipped cycle models
+predict_s_0=True
+# Type of predictive posterior to compute
+predictive_posterior=mean,pmf
+# Whether to compute predictive posterior for skipping probability
+predictive_posterior_s=False
+# Prediction plots
+plot_predictions=False
+# Save predictions
+save_predictions=False
