@@ -158,16 +158,17 @@ def main(data_model, save_data_dir, hyperparameters, I, C, train_test_ratio, tra
                         print('\t... finished loading fitted model {}'.format(model_name))
 
                     # Evaluate fitting
-                    if fitted_model is not None and 'fit_eval_metrics' in exec_mode['fit']:
-                        # Inference evaluation
-                        fit_results=eval_fit(
-                                            fit_results, exec_mode['fit'],
-                                            fitted_model, model_name, 
-                                            n_split, this_I_idx, this_C_idx,
-                                            fit_plot_dir, split_stamp
-                                        )                        
-                    else:
-                        raise ValueError('Can not evaluate models if we do not fit or load fitted!')
+                    if 'fit_eval_metrics' in exec_mode['fit']:
+                        if fitted_model is not None: 
+                            # Fitting evaluation
+                            fit_results=eval_fit(
+                                                fit_results, exec_mode['fit'],
+                                                fitted_model, model_name, 
+                                                n_split, this_I_idx, this_C_idx,
+                                                fit_plot_dir, split_stamp
+                                            )                        
+                        else:
+                            raise ValueError('Can not evaluate models if we do not fit or load fitted!')
                     
                     ###############################
                     # Now that we have a fitted model

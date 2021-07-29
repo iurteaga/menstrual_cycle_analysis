@@ -184,13 +184,16 @@ def get_full_I_size(data_model, save_data_dir, I, C, hyperparameters):
 def preallocate_resources_based_on_exec_mode(main_dir, model_names, exec_mode, train_test_splits, train_test_ratio, I_range, C_range): 
     # Fit evaluation
     fit_results=fit_model_dir=fit_plot_dir=None
-    if 'fit' in exec_mode and 'fit_eval_metrics' in exec_mode['fit']:
-        # Results
-        fit_results=preallocate_fit_results(exec_mode['fit']['fit_eval_metrics'], model_names, train_test_splits, I_range, C_range)
+    if 'fit' in exec_mode:
         # Fitted models
         if exec_mode['fit']['save_fitted_model']:
             fit_model_dir='{}/fitted_models'.format(main_dir)
             os.makedirs(fit_model_dir, exist_ok=True)
+        
+        if 'fit_eval_metrics' in exec_mode['fit']:
+            # Results
+            fit_results=preallocate_fit_results(exec_mode['fit']['fit_eval_metrics'], model_names, train_test_splits, I_range, C_range)
+        
         # Fitted model evaluation
         if exec_mode['fit']['plot_fit_eval']:
             fit_plot_dir='{}/plots_fit'.format(main_dir)
