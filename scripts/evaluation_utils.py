@@ -31,7 +31,6 @@ from baseline import *
 # Import neural network models
 from neural_network_models import *
 # Import Generative models
-from poisson_models import *
 from poisson_with_skipped_cycles_models import *
 from generalized_poisson_with_skipped_cycles_models import *  
 

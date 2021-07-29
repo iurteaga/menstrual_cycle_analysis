@@ -2,6 +2,8 @@
 
 Work on the characterization and analysis of menstrual cycles using self-tracked mobile health data
 
+We provide a conda environment file for ease of replication in ./menstrual_cycle_analysis.yml
+
 ## Present directories
 
 ### doc
