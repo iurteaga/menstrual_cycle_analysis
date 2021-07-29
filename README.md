@@ -18,10 +18,10 @@ Work on the characterization and analysis of menstrual cycles using self-tracked
 
 Main directory with source code utilities.
 
-- src/characterization
+- src/characterization:
     Directory with code for data processing
 
-- src/prediction
+- src/prediction:
     Directory with code for predictive modeling and evaluation.
 
 ### scripts
