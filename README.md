@@ -34,32 +34,39 @@ Main directory with scripts to run, evaluate and plot experiments.
 
 ### data
 
+Cycle length only information for predictive work
+- ./data/cycle_length_data/cycle_lengths.npz
+        Numpy array with I (number of individuals) by C (number of cycles per-individual) information
+
+
 Original dataframes with cycles and tracking data
 - ./data/cycles.pickle  
-    Original cycle information (as pandas dataframe)
+        Original cycle information (as pandas dataframe)
 
 - ./data/tracking.pickle  
-    Original symptom tracking information (as pandas dataframe)
-
+        Original symptom tracking information (as pandas dataframe)
+     
 ### preprocessed_data
 
 Pre-processed dataframes with cycles and tracking data
 
 - ./preprocessed_data/cohort_cycle_stats.pickle  
-    Cycle statistics of the original cohort
+        Cycle statistics of the original cohort
 
 - ./preprocessed_data/cohort_cycles_flagged.pickle  
-    Cycle information, with flagged cycle indicator, of the original cohort
+        Cycle information, with flagged cycle indicator, of the original cohort
 
 - ./preprocessed_data/cohort_clean_cycle_stats.pickle  
-    Cycle statistics of the clean cohort, after removing flagged cycles
+        Cycle statistics of the clean cohort, after removing flagged cycles
 
 - ./preprocessed_data/cohort_clean_symptom_tracking_stats_{category}.pickle  
-    Symptom tracking statistics for the clean cohort, where {category} matches each of the corresponding tracked categories
+        Symptom tracking statistics for the clean cohort, where {category} matches each of the corresponding tracked categories
 
 ### results
 
 Directory for plots and results
+
+Characterization outputs
 
 - ./results/characterizing_cycle_and_symptoms
     Results regarding the initial exploratory analysis to characterize the menstrual cycle and self-tracked symptoms
@@ -72,3 +79,8 @@ Directory for plots and results
 
 - ./results/characterizing_cycle_and_symptoms/symptom_tracking_analysis_bootstrapping_{nbootstrapped}  
         Results for a bootstrapped analysis (with nbootstrapped samples) of the npjDigitalMedicine cohort's self-tracked symptoms 
+        
+Predictive outputs
+
+- ./results/evaluate_predictive_models/
+        Directory for results per each evaluated cycle length dataset and model
