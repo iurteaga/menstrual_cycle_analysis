@@ -20,10 +20,10 @@ We provide a conda environment file for ease of replication in ./menstrual_cycle
 
 Main directory with source code utilities.
 
-- src/characterization:
+- src/characterization  
     Directory with code for data processing
 
-- src/prediction:
+- src/prediction  
     Directory with code for predictive modeling and evaluation.
 
 ### scripts
@@ -35,7 +35,7 @@ Main directory with scripts to run, evaluate and plot experiments.
 ### data
 
 Cycle length only information for predictive work
-- ./data/cycle_length_data/cycle_lengths.npz
+- ./data/cycle_length_data/cycle_lengths.npz  
         Numpy array with I (number of individuals) by C (number of cycles per-individual) information
 
 
@@ -68,7 +68,7 @@ Directory for plots and results
 
 Characterization outputs
 
-- ./results/characterizing_cycle_and_symptoms
+- ./results/characterizing_cycle_and_symptoms  
     Results regarding the initial exploratory analysis to characterize the menstrual cycle and self-tracked symptoms
     
 - ./results/characterizing_cycle_and_symptoms/cohort_summary_statistics  
@@ -82,5 +82,5 @@ Characterization outputs
         
 Predictive outputs
 
-- ./results/evaluate_predictive_models/
+- ./results/evaluate_predictive_models/  
         Directory for results per each evaluated cycle length dataset and model
