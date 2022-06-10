@@ -18,6 +18,7 @@ The input data for all models is an array/tensor of cycle-lengths per user:
     That is, the dataset is an array of size I x C, where each (i,c) entry is cycle length c for user i.
 
 Helper function is [get_data](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/data_functions.py#L119 "get_data function")
+    
     - Input
         - Data_model: whether to “load” or “simulate data”
     - Output
@@ -56,6 +57,7 @@ These population-level hyperparameters are learned when we fit the model by mini
 In this [model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py "Poisson generative model with skipped cycles"), cycle lengths are drawn from a Poisson distribution.
 
 - Hyperparameters (to be learned)
+    
     - [kappa and gamma for Poisson parameter gamma prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L52)
     - [alpha and beta for Beta prior on skipping probabilities](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L55)
     
@@ -64,6 +66,7 @@ In this [model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master
         - hyperparameters kappa, gamma, alpha, beta (if not interested in defaults)
 
 - Call to [fit the generative process](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L661)
+    
     - Input variables
         - X is the data to fit to, numpy array or torch Tensor of size I by C
         - Optimizer and criterion are 2 key inputs for optimization
@@ -74,6 +77,7 @@ In this [model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master
         - Fit directly changes class hyperparameters attributes
 
 - Call to [predict with the generative process](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L795)
+    
     - Prediction will be done based on class hyperparameter attributes, i.e., this should have been either initialized to values of interest or learned by fitting
     
     - Input variables
@@ -89,12 +93,12 @@ In this [model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master
 
 In this [model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py "Generalized Poisson generative model with skipped cycles"), cycle lengths are drawn from a [Generalized Poisson distribution](https://www.jstor.org/stable/1267389), which has 2 degrees of freedom allowing different mean and variances for cycle-lengths.
 
-- Hyperparameters (to be learned), all defined in log-space
+    - Hyperparameters (to be learned), all defined in log-space
         - [kappa and gamma for Generalized Poisson's $\lambda$ parameter's gamma prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py#L76)
         - [alpha and beta for Generalized Poisson's $\xi$ parameter's beta prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py#L79)
         - [alpha and beta for Beta prior on skipping probabilities](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py#L85)
-        
-- Init, fit and predict functions operate as for Poisson model above, with Generalized Poisson model specific computations of log-normalizing constant
+            
+    - Init, fit and predict functions operate as for Poisson model above, with Generalized Poisson model specific computations of log-normalizing constant
 
 
 # 3) Script for basic generative Poisson predictive model execution
