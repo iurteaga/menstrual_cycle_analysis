@@ -1,16 +1,6 @@
 #!/usr/bin/python
 
 ########################################################################
-### Elhadad lab member fair-share code
-########################################################################
-import platform
-import sys
-# If in ibnezra
-if platform.node() == 'ibnezra':
-    sys.path.append('/nlp/anaconda3')
-    import lab_resource_sharing
-
-########################################################################
 ### Script to evaluate predictive models in simulated data
 ########################################################################
 ## Imports
