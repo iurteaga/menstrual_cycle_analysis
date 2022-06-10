@@ -56,11 +56,11 @@ These population-level hyperparameters are learned when we fit the model by mini
 
 In this [model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py "Poisson generative model with skipped cycles"), cycle lengths are drawn from a Poisson distribution.
 
-- Hyperparameters (to be learned)
-    
-    - [kappa and gamma for Poisson parameter gamma prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L52)
-    
-    - [alpha and beta for Beta prior on skipping probabilities](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L55)
+    - Hyperparameters (to be learned)
+        
+        - [kappa and gamma for Poisson parameter gamma prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L52)
+        
+        - [alpha and beta for Beta prior on skipping probabilities](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L55)
     
 - [Class initialization](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L39)
     
@@ -95,54 +95,54 @@ In this [model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master
 
 In this [model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py "Generalized Poisson generative model with skipped cycles"), cycle lengths are drawn from a [Generalized Poisson distribution](https://www.jstor.org/stable/1267389), which has 2 degrees of freedom allowing different mean and variances for cycle-lengths.
 
-    - Hyperparameters (to be learned), all defined in log-space
+- Hyperparameters (to be learned), all defined in log-space
+    
+    - [kappa and gamma for Generalized Poisson's $\lambda$ parameter's gamma prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py#L76)
+    - [alpha and beta for Generalized Poisson's $\xi$ parameter's beta prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py#L79)
+    - [alpha and beta for Beta prior on skipping probabilities](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py#L85)
         
-        - [kappa and gamma for Generalized Poisson's $\lambda$ parameter's gamma prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py#L76)
-        - [alpha and beta for Generalized Poisson's $\xi$ parameter's beta prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py#L79)
-        - [alpha and beta for Beta prior on skipping probabilities](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/generalized_poisson_with_skipped_cycles_models.py#L85)
-            
-    - Init, fit and predict functions operate as for Poisson model above, with Generalized Poisson model specific computations of log-normalizing constant
+- Init, fit and predict functions operate as for Poisson model above, with Generalized Poisson model specific computations of log-normalizing constant
 
 
 # 3) Script for basic generative Poisson predictive model execution
 
 This is a [basic script](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py "Fit and predicti with generative model") that illustrates how to load cycle-length data to fit a generative Poisson cycle length model and make predictions using such model (in the same set of users)
 
-    - Example usage
-        ```bash
-            python3 poisson_model_fit_predict.py \
-                -data_dir ../data/cycle_length_data \
-                    # Load data from ../data/cycle_length_data/cycle_lengths.npz
-                -model_name generative_poisson_with_skipped_cycles
-                    # Fit and predict using the generative poisson model, with parameters in ./generative_model_config/generative_poisson_with_skipped_cycles
-        ```
+Example usage
+```bash
+    python3 poisson_model_fit_predict.py \
+        -data_dir ../data/cycle_length_data \
+            # Load data from ../data/cycle_length_data/cycle_lengths.npz
+        -model_name generative_poisson_with_skipped_cycles
+            # Fit and predict using the generative poisson model, with parameters in ./generative_model_config/generative_poisson_with_skipped_cycles
+```
 
 Summary of script
 
-    - [Data-loading](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L38)
-        - Loads pickled ../data/cycle_length_data/cycle_lengths.npz dataset
-        - And gets dataset details I,C, and X
+- [Data-loading](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L38)
+    - Loads pickled ../data/cycle_length_data/cycle_lengths.npz dataset
+    - And gets dataset details I,C, and X
 
-    - [Model instantiation and configuration](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L48), from input config file
-        - [Instantiate model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L54), as determined by information in ./generative_model_config/generative_poisson_with_skipped_cycles
+- [Model instantiation and configuration](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L48), from input config file
+    - [Instantiate model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L54), as determined by information in ./generative_model_config/generative_poisson_with_skipped_cycles
 
-        - Load model [fitting](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L65), [optimization](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L96), and [prediction](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L111) parameters from ./generative_model_config/generative_poisson_with_skipped_cycles
+    - Load model [fitting](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L65), [optimization](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L96), and [prediction](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L111) parameters from ./generative_model_config/generative_poisson_with_skipped_cycles
 
-    - [Fitting](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L147)
-        - Fit the model to data X, given optimizer, criterion, monte carlo samples M and other_fitting_args, all loaded in model configuration step
+- [Fitting](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L147)
+    - Fit the model to data X, given optimizer, criterion, monte carlo samples M and other_fitting_args, all loaded in model configuration step
 
-    - [Prediction](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L154)
-        - Leverage the fitted model to predict, for which we use the same dataset: i.e., use the same data to compute per-user posteriors, then predict next cycle length
-        - Prediction is done for the specified *day_range* (0,30) with only *'mean'*, i.e., expected cycle-length predictions
-        - The output of the call is a set of model predictions for each day specified in *day_range*:
-            i.e., a dictionary, with only 'mean' as key, with a numpy array of size *I* by length of *day_range* as values:
-                my_model_predictions['mean'][i,d] is the model’s predicted cycle length for user i in day d
+- [Prediction](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L154)
+    - Leverage the fitted model to predict, for which we use the same dataset: i.e., use the same data to compute per-user posteriors, then predict next cycle length
+    - Prediction is done for the specified *day_range* (0,30) with only *'mean'*, i.e., expected cycle-length predictions
+    - The output of the call is a set of model predictions for each day specified in *day_range*:
+        i.e., a dictionary, with only 'mean' as key, with a numpy array of size *I* by length of *day_range* as values:
+            my_model_predictions['mean'][i,d] is the model’s predicted cycle length for user i in day d
 
-    - The script prints the model's cycle-length predictions [at day 0](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L167) and [at day 20](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L170) of the next cycle 
+- The script prints the model's cycle-length predictions [at day 0](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L167) and [at day 20](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py#L170) of the next cycle 
     
 # 4)Script for predictive model execution and evaluation
 
-This is a wrapper, general script that fits, predicts, and evaluates a set of models of interest (baseline, generative and neural network based) for a given cycle-length dataset:
+    This is a wrapper, general script that fits, predicts, and evaluates a set of models of interest (baseline, generative and neural network based) for a given cycle-length dataset:
 https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/evaluate_predictive_models.py
 The script operates based on script input parameters (see description below) and execution and model config files:
 Input execution config file:
