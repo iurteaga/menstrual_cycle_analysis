@@ -56,11 +56,11 @@ These population-level hyperparameters are learned when we fit the model by mini
 
 In this [model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py "Poisson generative model with skipped cycles"), cycle lengths are drawn from a Poisson distribution.
 
-    - Hyperparameters (to be learned)
-        
-        - [kappa and gamma for Poisson parameter gamma prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L52)
-        
-        - [alpha and beta for Beta prior on skipping probabilities](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L55)
+- Hyperparameters (to be learned)
+    
+    - [kappa and gamma for Poisson parameter gamma prior](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L52)
+    
+    - [alpha and beta for Beta prior on skipping probabilities](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L55)
     
 - [Class initialization](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/src/prediction/poisson_with_skipped_cycles_models.py#L39)
     
@@ -108,7 +108,7 @@ In this [model](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master
 
 This is a [basic script](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/poisson_model_fit_predict.py "Fit and predicti with generative model") that illustrates how to load cycle-length data to fit a generative Poisson cycle length model and make predictions using such model (in the same set of users)
 
-Example usage
+Example usage:
 ```bash
 python3 poisson_model_fit_predict.py \
     -data_dir ../data/cycle_length_data \
@@ -142,17 +142,18 @@ Summary of script
     
 # 4) Script for predictive model execution and evaluation
 
-This is a wrapper, [general script](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/evaluate_predictive_models.py "evaluate predictive models") that fits, predicts, and evaluates a set of models of interest (baseline, generative and neural network based) for a given cycle-length dataset:
+This is a wrapper, [general script](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/evaluate_predictive_models.py "evaluate predictive models") that fits, predicts, and evaluates a set of models of interest (baseline, generative and neural network based) for a given cycle-length dataset.
 
 The script operates based on script input parameters (see description below) and execution and model config files:
 
 - Input execution config file:
     - [Example execution config files](https://github.com/iurteaga/menstrual_cycle_analysis/tree/master/scripts/execution_config)
     - The config file specifies which parts of the script to run (fit, inference, prediction) and their configuration parameters, as well as which evaluations to compute and plot
+        
         For instance, for prediction task:
-            'prediction_eval_metrics' is the list of metrics to use for evaluation
-            'day_range' specifies number of days to predict into the future
-            'predictive_posterior' determines whether to make point predictions for cycle length ('mean') or to predict the whole probability distribution for cycle length ('pmf') 
+            - 'prediction_eval_metrics' is the list of metrics to use for evaluation
+            - 'day_range' specifies number of days to predict into the future
+            - 'predictive_posterior' determines whether to make point predictions for cycle length ('mean') or to predict the whole probability distribution for cycle length ('pmf') 
 
 - Input model config file, as specified by model-name argument:
     - [Example generative model config files](https://github.com/iurteaga/menstrual_cycle_analysis/tree/master/scripts/generative_model_config)
@@ -167,23 +168,25 @@ The script operates based on script input parameters (see description below) and
 - Script description
     - [Fit_model function](https://github.com/iurteaga/menstrual_cycle_analysis/blob/fc050fe77def5076f6a32d400c7cca193c9a6ba4/scripts/evaluation_utils.py#L300)
         - General fit function, fits specified model (as determined by 'model_name' argument)
-            [fit] section in 'exec_mode' execution config file specifies model fitting parameters 
-            'I_train' and 'C_train' specify size of training data
-            If using simulated data, can specify 'true_params' for comparison
-            'X' and 'Y' specify input and output data
-            Unnecessary for generative models, useful for neural network fitting
-        'Fit_model_dir' specifies where to save fitted model and 'stamp' is a filename stamp to distinguish fitted model from others 
+            
+            - [fit] section in 'exec_mode' execution config file specifies model fitting parameters 
+            - 'I_train' and 'C_train' specify size of training data
+            - If using simulated data, can specify 'true_params' for comparison
+            - 'X' and 'Y' specify input and output data
+                Unnecessary for generative models, useful for neural network fitting
+            - 'fit_model_dir' specifies where to save fitted model and 'stamp' is a filename stamp to distinguish fitted model from others 
 
     -[Predict function](https://github.com/iurteaga/menstrual_cycle_analysis/blob/fc050fe77def5076f6a32d400c7cca193c9a6ba4/scripts/evaluation_utils.py#L836)
         - General prediction function, makes predictions for specified model (as determined by 'model_name' argument)
-            [prediction] section in 'exec_mode' execution config file specifies prediction parameters 
-            'Fitted_model' object to use for predictions
-            'X_train' and 'X_test' passed as input
-            X_train and X_test will be used to compute model posteriors
-            These 2 inputs are used to evaluate predictions for the users that were used for fitting (X_train) Vs new unseen users (X_test)
-            'Day_range' specifies number of days to predict into the future
-            'Prediction_plot_dir' and 'prediction_posterior_dir' specify save directories for prediction plots and predictions 
-            'Stamp' specifies filename stamp for prediction results
+            
+            - [prediction] section in 'exec_mode' execution config file specifies prediction parameters 
+            - 'fitted_model' object to use for predictions
+            - 'X_train' and 'X_test' passed as input
+                X_train and X_test will be used to compute model posteriors
+                These 2 inputs are used to evaluate predictions for the users that were used for fitting (X_train) Vs new unseen users (X_test)
+            - 'day_range' specifies number of days to predict into the future
+            - 'prediction_plot_dir' and 'prediction_posterior_dir' specify save directories for prediction plots and predictions 
+            - 'stamp' specifies filename stamp for prediction results
 
     - Evaluation functions, as different aspects of the model training and prediction can be evaluated
         - [Fitting evaluation](https://github.com/iurteaga/menstrual_cycle_analysis/blob/master/scripts/evaluate_predictive_models.py#L164)
