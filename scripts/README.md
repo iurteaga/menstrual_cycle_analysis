@@ -1,3 +1,9 @@
+# Basic example of how to load cycle-length data to fit a generative Poisson cycle length model and make predictions using such model
+
+```bash
+python3 -m pdb poisson_model_fit_predict.py -data_dir ../data/cycle_length_data -model_name generative_poisson_with_skipped_cycles
+```
+
 # Examples of how to run and evaluate different models
 
 ## Simulated data

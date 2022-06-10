@@ -40,7 +40,7 @@ def main(data_dir, model_name):
     with open('{}/cycle_lengths.npz'.format(data_dir), 'rb') as f:
         # Load
         loaded_data=np.load(f, allow_pickle=True)
-        # Simulation parameters
+        # Dataset details
         I=loaded_data['I']
         C=loaded_data['C']
         X=loaded_data['cycle_lengths']
@@ -162,6 +162,12 @@ def main(data_dir, model_name):
                 posterior_type='mean', # Only mean predictions
                 day_range=np.arange(0,30) #First 30 days
         )
+    
+        print('Model predicted cycle-lengths at day 0')
+        print(my_model_predictions['mean'][:,0])
+        
+        print('Model predicted cycle-lengths at day 20')
+        print(my_model_predictions['mean'][:,20])
         
     except Exception as error:
         print('Could not create {} model with error {}'.format(model_name, error))
