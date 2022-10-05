@@ -37,36 +37,16 @@ Main directory with scripts to run, evaluate and plot experiments.
 Cycle length only information for predictive work
 - ./data/cycle_length_data/cycle_lengths.npz  
         Numpy array with I (number of individuals) by C (number of cycles per-individual) information
-
-
-Original dataframes with cycles and tracking data
-- ./data/cycles.pickle  
-        Original cycle information (as pandas dataframe)
-
-- ./data/tracking.pickle  
-        Original symptom tracking information (as pandas dataframe)
      
 ### preprocessed_data
 
-Pre-processed dataframes with cycles and tracking data
-
-- ./preprocessed_data/cohort_cycle_stats.pickle  
-        Cycle statistics of the original cohort
-
-- ./preprocessed_data/cohort_cycles_flagged.pickle  
-        Cycle information, with flagged cycle indicator, of the original cohort
-
-- ./preprocessed_data/cohort_clean_cycle_stats.pickle  
-        Cycle statistics of the clean cohort, after removing flagged cycles
-
-- ./preprocessed_data/cohort_clean_symptom_tracking_stats_{category}.pickle  
-        Symptom tracking statistics for the clean cohort, where {category} matches each of the corresponding tracked categories
+Pre-processed dataframes with cycles and tracking data were used for the [characterization of menstrual cycles using self-tracked mobile health data](https://www.nature.com/articles/s41746-020-0269-8): these are not publicly available.
 
 ### results
 
 Directory for plots and results
 
-Characterization outputs
+Characterization outputs for code in src/characterization
 
 - ./results/characterizing_cycle_and_symptoms  
     Results regarding the initial exploratory analysis to characterize the menstrual cycle and self-tracked symptoms
