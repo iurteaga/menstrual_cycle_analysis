@@ -14,7 +14,9 @@ We provide a conda environment file for ease of replication in ./menstrual_cycle
 - doc/prediction: manuscripts on predictive models:
     - [A generative, predictive model for menstrual cycle lengths that accounts for potential self-tracking artifacts in mobile health data. Li, K.; Urteaga, I.; Shea, A.; Vitzthum, V.; Wiggins, C. H; and Elhadad, N. In NeurIPS 2020 Workshop Machine Learning for Mobile Health, 2020. Contributed Talk.](https://sites.google.com/view/ml4mobilehealth-neurips-2020/home#h.kx5rlc27ssyh)
     - [A generative, predictive model for menstrual cycle lengths that accounts for potential self-tracking artifacts in mobile health data. Li, K.; Urteaga, I.; Shea, A.; Vitzthum, V. J.; Wiggins, C. H.; and Elhadad, N. arXiv e-print:2102.12439.](https://arxiv.org/abs/2102.12439)
-    - [A Generative Modeling Approach to Calibrated Predictions:A Use Case on Menstrual Cycle Length Prediction. Urteaga, I.; Li, K.; Wiggins, C.; and Elhadad, N. In Proceedings of the 6th Machine Learning for Healthcare, 2021.](https://www.mlforhc.org/accepted-papers-1)
+    - [A predictive model for next cycle start date that accounts for adherence in menstrual self-tracking]. Li K.; Urteaga, I.; Shea, A.; Vitzthum, V. J.; Wiggins, C. H.; and Elhadad, N.;
+Journal of the American Medical Informatics Association, Volume 29, Issue 1, Pages 3–11, January 2022](https://doi.org/10.1093/jamia/ocab182)
+    - [A Generative Modeling Approach to Calibrated Predictions:A Use Case on Menstrual Cycle Length Prediction. Urteaga, I.; Li, K.; Wiggins, C.; and Elhadad, N. In Proceedings of the 6th Machine Learning for Healthcare, 2021.](https://proceedings.mlr.press/v149/urteaga21a.html)
 
 ### src
 
